@@ -50,7 +50,7 @@ class STNSCN(nn.Module):
 
         self.use_transform = use_transform
         self.device = device
-
+        
         node_num = static_norm_adjs[0].shape[0]
         # node_num = 54
         self.node_num = node_num

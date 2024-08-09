@@ -1,0 +1,88 @@
+2024-07-31 12:03:04,422 - __main__ - INFO - Log directory: data/ckpt/BJ/STEGRN/30min/log
+2024-07-31 12:03:04,435 - __main__ - INFO - {'expid': 1, 'runs': 2, 'dataset_name': 'all_data_r1_d1_w1_30min.npz', 'device': 'cuda:0', 'log_level': 'INFO', 'base_path': 'data/train_data/BJ', 'save': 'data/ckpt/BJ', 'model_name': 'STEGRN', 'data': {'cluster_num': 64, 'freq': '30min', 'name': 'bj_bike', 'num_for_predict': 6, 'num_for_target': 2, 'num_of_days': 1, 'num_of_hours': 1, 'num_of_weeks': 1, 'num_shift': 2, 'points_per_hour': 2, 'test_batch_size': 64, 'train_batch_size': 64, 'val_batch_size': 64}, 'model': {'adj': 'affinity', 'alpha': 1, 'dropout_prob': 0.0, 'dropout_type': 'zoneout', 'dyn_norm': 'D-1', 'fusion_mode': 'split', 'gcn_depth': 2, 'graph_type': 'geo_od_dyn', 'hidden_dim': 64, 'input_dim': 2, 'loss_type': 'Smooth', 'num_of_head': 1, 'output_dim': 2, 'time_dim': 59, 'use_transform': True}, 'preprocess': {'OD_affinity_file': 'OD_affinity.npy', 'datasets_file': 'all_data', 'geo_affinity_file': 'geo_affinity.npy', 'nyc_holidays': ['2021-05-01', '2021-05-02', '2021-05-03', '2021-05-04', '2021-06-03', '2021-06-04', '2021-06-05']}, 'train': {'base_lr': 0.001, 'best_mode': 'data/ckpt/BJ/BJ-model.pth', 'test_only': True, 'cl_decay_steps': 1000, 'epoch_start': 0, 'epochs': 200, 'global_step': 0, 'load_initial': False, 'lr_decay_ratio': 0.2, 'max_grad_norm': 5, 'milestones': [60, 120, 180, 200], 'min_learning_rate': 2e-06, 'new_training': True, 'print_every': 1, 'tolerance': 100, 'use_curriculum_learning': True, 'weight_decay': 0.0001}}
+2024-07-31 12:03:04,435 - __main__ - INFO - data/train_data/BJ/all_data_r1_d1_w1_30min.npz
+2024-07-31 12:03:04,436 - __main__ - INFO - data/ckpt/BJ/STEGRN/30min/log
+2024-07-31 12:03:04,984 - __main__ - INFO - ('train x', (4362, 64, 18, 2))
+2024-07-31 12:03:04,985 - __main__ - INFO - ('train target', (4362, 64, 2, 2))
+2024-07-31 12:03:04,985 - __main__ - INFO - ('train x time', (4362, 18, 6))
+2024-07-31 12:03:04,985 - __main__ - INFO - ('train target time', (4362, 2, 6))
+2024-07-31 12:03:04,985 - __main__ - INFO - ('train pos', (4362, 4))
+2024-07-31 12:03:04,985 - __main__ - INFO - 
+
+2024-07-31 12:03:04,986 - __main__ - INFO - ('val x', (545, 64, 18, 2))
+2024-07-31 12:03:04,986 - __main__ - INFO - ('val target', (545, 64, 2, 2))
+2024-07-31 12:03:04,986 - __main__ - INFO - ('val x time', (545, 18, 6))
+2024-07-31 12:03:04,986 - __main__ - INFO - ('val target time', (545, 2, 6))
+2024-07-31 12:03:04,986 - __main__ - INFO - ('val pos', (545, 4))
+2024-07-31 12:03:04,986 - __main__ - INFO - 
+
+2024-07-31 12:03:04,987 - __main__ - INFO - ('test x', (545, 64, 18, 2))
+2024-07-31 12:03:04,987 - __main__ - INFO - ('test target', (545, 64, 2, 2))
+2024-07-31 12:03:04,987 - __main__ - INFO - ('test x time', (545, 18, 6))
+2024-07-31 12:03:04,987 - __main__ - INFO - ('test target time', (545, 2, 6))
+2024-07-31 12:03:04,987 - __main__ - INFO - ('test pos', (545, 4))
+2024-07-31 12:03:04,987 - __main__ - INFO - 
+
+2024-07-31 12:03:04,988 - __main__ - INFO - scaler.mean : 90.54989856764863, scaler.std : 143.57267603277353
+2024-07-31 12:03:04,988 - __main__ - INFO - 
+
+2024-07-31 12:03:04,988 - __main__ - INFO - time feature index : {'time': (0, 3), 'weather_numerical': (3, 6)}
+2024-07-31 12:03:04,989 - __main__ - INFO - time weather data : [[Timestamp('2021-05-01 00:00:00') 5 0 ... -0.13878310472443348
+  -3.3157922872053995 -0.7646244036924886]
+ [Timestamp('2021-05-01 00:30:00') 5 1 ... -0.13878310472443348
+  -3.41756948903783 -0.7646244036924886]
+ [Timestamp('2021-05-01 01:00:00') 5 2 ... -0.13878310472443348
+  -3.5193466908702606 -0.35891374678582444]
+ ...
+ [Timestamp('2021-08-31 22:30:00') 1 45 ... -0.13878310472443348
+  -0.3133648331486997 -1.9817563744124813]
+ [Timestamp('2021-08-31 23:00:00') 1 46 ... -0.13878310472443348
+  -0.7713622413946369 -1.9817563744124813]
+ [Timestamp('2021-08-31 23:30:00') 1 47 ... -0.13878310472443348
+  -0.8222508423108522 -1.9817563744124813]]
+2024-07-31 12:03:05,008 - __main__ - INFO - STEGRN
+2024-07-31 12:03:06,366 - __main__ - INFO - loading data/ckpt/BJ/BJ-model.pth
+2024-07-31 12:03:58,381 - __main__ - INFO - Log directory: data/ckpt/BJ/STEGRN/30min/log
+2024-07-31 12:03:58,394 - __main__ - INFO - {'expid': 1, 'runs': 2, 'dataset_name': 'all_data_r1_d1_w1_30min.npz', 'device': 'cuda:0', 'log_level': 'INFO', 'base_path': 'data/train_data/BJ', 'save': 'data/ckpt/BJ', 'model_name': 'STEGRN', 'data': {'cluster_num': 64, 'freq': '30min', 'name': 'bj_bike', 'num_for_predict': 6, 'num_for_target': 2, 'num_of_days': 1, 'num_of_hours': 1, 'num_of_weeks': 1, 'num_shift': 2, 'points_per_hour': 2, 'test_batch_size': 64, 'train_batch_size': 64, 'val_batch_size': 64}, 'model': {'adj': 'affinity', 'alpha': 1, 'dropout_prob': 0.0, 'dropout_type': 'zoneout', 'dyn_norm': 'D-1', 'fusion_mode': 'split', 'gcn_depth': 2, 'graph_type': 'geo_od_dyn', 'hidden_dim': 64, 'input_dim': 2, 'loss_type': 'Smooth', 'num_of_head': 1, 'output_dim': 2, 'time_dim': 59, 'use_transform': True}, 'preprocess': {'OD_affinity_file': 'OD_affinity.npy', 'datasets_file': 'all_data', 'geo_affinity_file': 'geo_affinity.npy', 'nyc_holidays': ['2021-05-01', '2021-05-02', '2021-05-03', '2021-05-04', '2021-06-03', '2021-06-04', '2021-06-05']}, 'train': {'base_lr': 0.001, 'best_mode': 'data/ckpt/BJ/BJ-model.pth', 'test_only': True, 'cl_decay_steps': 1000, 'epoch_start': 0, 'epochs': 200, 'global_step': 0, 'load_initial': False, 'lr_decay_ratio': 0.2, 'max_grad_norm': 5, 'milestones': [60, 120, 180, 200], 'min_learning_rate': 2e-06, 'new_training': True, 'print_every': 1, 'tolerance': 100, 'use_curriculum_learning': True, 'weight_decay': 0.0001}}
+2024-07-31 12:03:58,395 - __main__ - INFO - data/train_data/BJ/all_data_r1_d1_w1_30min.npz
+2024-07-31 12:03:58,395 - __main__ - INFO - data/ckpt/BJ/STEGRN/30min/log
+2024-07-31 12:03:58,943 - __main__ - INFO - ('train x', (4362, 64, 18, 2))
+2024-07-31 12:03:58,943 - __main__ - INFO - ('train target', (4362, 64, 2, 2))
+2024-07-31 12:03:58,944 - __main__ - INFO - ('train x time', (4362, 18, 6))
+2024-07-31 12:03:58,944 - __main__ - INFO - ('train target time', (4362, 2, 6))
+2024-07-31 12:03:58,944 - __main__ - INFO - ('train pos', (4362, 4))
+2024-07-31 12:03:58,945 - __main__ - INFO - 
+
+2024-07-31 12:03:58,945 - __main__ - INFO - ('val x', (545, 64, 18, 2))
+2024-07-31 12:03:58,945 - __main__ - INFO - ('val target', (545, 64, 2, 2))
+2024-07-31 12:03:58,945 - __main__ - INFO - ('val x time', (545, 18, 6))
+2024-07-31 12:03:58,946 - __main__ - INFO - ('val target time', (545, 2, 6))
+2024-07-31 12:03:58,946 - __main__ - INFO - ('val pos', (545, 4))
+2024-07-31 12:03:58,946 - __main__ - INFO - 
+
+2024-07-31 12:03:58,947 - __main__ - INFO - ('test x', (545, 64, 18, 2))
+2024-07-31 12:03:58,947 - __main__ - INFO - ('test target', (545, 64, 2, 2))
+2024-07-31 12:03:58,947 - __main__ - INFO - ('test x time', (545, 18, 6))
+2024-07-31 12:03:58,947 - __main__ - INFO - ('test target time', (545, 2, 6))
+2024-07-31 12:03:58,948 - __main__ - INFO - ('test pos', (545, 4))
+2024-07-31 12:03:58,948 - __main__ - INFO - 
+
+2024-07-31 12:03:58,948 - __main__ - INFO - scaler.mean : 90.54989856764863, scaler.std : 143.57267603277353
+2024-07-31 12:03:58,948 - __main__ - INFO - 
+
+2024-07-31 12:03:58,949 - __main__ - INFO - time feature index : {'time': (0, 3), 'weather_numerical': (3, 6)}
+2024-07-31 12:03:58,950 - __main__ - INFO - time weather data : [[Timestamp('2021-05-01 00:00:00') 5 0 ... -0.13878310472443348
+  -3.3157922872053995 -0.7646244036924886]
+ [Timestamp('2021-05-01 00:30:00') 5 1 ... -0.13878310472443348
+  -3.41756948903783 -0.7646244036924886]
+ [Timestamp('2021-05-01 01:00:00') 5 2 ... -0.13878310472443348
+  -3.5193466908702606 -0.35891374678582444]
+ ...
+ [Timestamp('2021-08-31 22:30:00') 1 45 ... -0.13878310472443348
+  -0.3133648331486997 -1.9817563744124813]
+ [Timestamp('2021-08-31 23:00:00') 1 46 ... -0.13878310472443348
+  -0.7713622413946369 -1.9817563744124813]
+ [Timestamp('2021-08-31 23:30:00') 1 47 ... -0.13878310472443348
+  -0.8222508423108522 -1.9817563744124813]]
+2024-07-31 12:03:58,967 - __main__ - INFO - STEGRN
+2024-07-31 12:04:00,358 - __main__ - INFO - loading data/ckpt/BJ/BJ-model.pth

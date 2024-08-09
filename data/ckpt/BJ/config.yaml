@@ -57,7 +57,7 @@ preprocess:
 train:
   base_lr: 0.001
   best_mode: data/ckpt/BJ/BJ-model.pth
-  test_only: True
+  test_only: true
   cl_decay_steps: 1000
   epoch_start: 0
   epochs: 200

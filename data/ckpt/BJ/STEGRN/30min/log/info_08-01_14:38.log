@@ -1,0 +1,142 @@
+2024-08-01 14:38:29,864 - __main__ - INFO - Log directory: data/ckpt/BJ/STEGRN/30min/log
+2024-08-01 14:38:29,878 - __main__ - INFO - {'expid': 1, 'runs': 2, 'dataset_name': 'all_data_r1_d1_w1_30min.npz', 'device': 'cuda:0', 'log_level': 'INFO', 'base_path': 'data/train_data/BJ', 'save': 'data/ckpt/BJ', 'model_name': 'STEGRN', 'data': {'cluster_num': 64, 'freq': '30min', 'name': 'bj_bike', 'num_for_predict': 6, 'num_for_target': 2, 'num_of_days': 1, 'num_of_hours': 1, 'num_of_weeks': 1, 'num_shift': 2, 'points_per_hour': 2, 'test_batch_size': 64, 'train_batch_size': 64, 'val_batch_size': 64}, 'model': {'adj': 'affinity', 'alpha': 1, 'dropout_prob': 0.0, 'dropout_type': 'zoneout', 'dyn_norm': 'D-1', 'fusion_mode': 'split', 'gcn_depth': 2, 'graph_type': 'geo_od_dyn', 'hidden_dim': 64, 'input_dim': 2, 'loss_type': 'Smooth', 'num_of_head': 1, 'output_dim': 2, 'time_dim': 59, 'use_transform': True}, 'preprocess': {'OD_affinity_file': 'OD_affinity.npy', 'datasets_file': 'all_data', 'geo_affinity_file': 'geo_affinity.npy', 'nyc_holidays': ['2021-05-01', '2021-05-02', '2021-05-03', '2021-05-04', '2021-06-03', '2021-06-04', '2021-06-05']}, 'train': {'base_lr': 0.001, 'best_mode': 'data/ckpt/BJ/BJ-model.pth', 'test_only': True, 'cl_decay_steps': 1000, 'epoch_start': 0, 'epochs': 200, 'global_step': 0, 'load_initial': False, 'lr_decay_ratio': 0.2, 'max_grad_norm': 5, 'milestones': [60, 120, 180, 200], 'min_learning_rate': 2e-06, 'new_training': True, 'print_every': 1, 'tolerance': 100, 'use_curriculum_learning': True, 'weight_decay': 0.0001}}
+2024-08-01 14:38:29,879 - __main__ - INFO - data/train_data/BJ/all_data_r1_d1_w1_30min.npz
+2024-08-01 14:38:29,879 - __main__ - INFO - data/ckpt/BJ/STEGRN/30min/log
+2024-08-01 14:38:30,407 - __main__ - INFO - ('train x', (4362, 64, 18, 2))
+2024-08-01 14:38:30,408 - __main__ - INFO - ('train target', (4362, 64, 2, 2))
+2024-08-01 14:38:30,408 - __main__ - INFO - ('train x time', (4362, 18, 6))
+2024-08-01 14:38:30,408 - __main__ - INFO - ('train target time', (4362, 2, 6))
+2024-08-01 14:38:30,408 - __main__ - INFO - ('train pos', (4362, 4))
+2024-08-01 14:38:30,408 - __main__ - INFO - 
+
+2024-08-01 14:38:30,409 - __main__ - INFO - ('val x', (545, 64, 18, 2))
+2024-08-01 14:38:30,409 - __main__ - INFO - ('val target', (545, 64, 2, 2))
+2024-08-01 14:38:30,409 - __main__ - INFO - ('val x time', (545, 18, 6))
+2024-08-01 14:38:30,409 - __main__ - INFO - ('val target time', (545, 2, 6))
+2024-08-01 14:38:30,409 - __main__ - INFO - ('val pos', (545, 4))
+2024-08-01 14:38:30,409 - __main__ - INFO - 
+
+2024-08-01 14:38:30,409 - __main__ - INFO - ('test x', (545, 64, 18, 2))
+2024-08-01 14:38:30,410 - __main__ - INFO - ('test target', (545, 64, 2, 2))
+2024-08-01 14:38:30,410 - __main__ - INFO - ('test x time', (545, 18, 6))
+2024-08-01 14:38:30,410 - __main__ - INFO - ('test target time', (545, 2, 6))
+2024-08-01 14:38:30,410 - __main__ - INFO - ('test pos', (545, 4))
+2024-08-01 14:38:30,410 - __main__ - INFO - 
+
+2024-08-01 14:38:30,410 - __main__ - INFO - scaler.mean : 90.54989856764863, scaler.std : 143.57267603277353
+2024-08-01 14:38:30,411 - __main__ - INFO - 
+
+2024-08-01 14:38:30,411 - __main__ - INFO - time feature index : {'time': (0, 3), 'weather_numerical': (3, 6)}
+2024-08-01 14:38:30,412 - __main__ - INFO - time weather data : [[Timestamp('2021-05-01 00:00:00') 5 0 ... -0.13878310472443348
+  -3.3157922872053995 -0.7646244036924886]
+ [Timestamp('2021-05-01 00:30:00') 5 1 ... -0.13878310472443348
+  -3.41756948903783 -0.7646244036924886]
+ [Timestamp('2021-05-01 01:00:00') 5 2 ... -0.13878310472443348
+  -3.5193466908702606 -0.35891374678582444]
+ ...
+ [Timestamp('2021-08-31 22:30:00') 1 45 ... -0.13878310472443348
+  -0.3133648331486997 -1.9817563744124813]
+ [Timestamp('2021-08-31 23:00:00') 1 46 ... -0.13878310472443348
+  -0.7713622413946369 -1.9817563744124813]
+ [Timestamp('2021-08-31 23:30:00') 1 47 ... -0.13878310472443348
+  -0.8222508423108522 -1.9817563744124813]]
+2024-08-01 14:38:30,430 - __main__ - INFO - STEGRN
+2024-08-01 14:38:31,747 - __main__ - INFO - loading data/ckpt/BJ/BJ-model.pth
+2024-08-01 14:38:31,780 - __main__ - INFO - model load success! data/ckpt/BJ/BJ-model.pth
+2024-08-01 14:38:31,780 - __main__ - INFO - Net's state_dict:
+2024-08-01 14:38:31,782 - __main__ - INFO - encoder.RNNCell.0.week_x_FC.weight	torch.Size([64, 2])
+2024-08-01 14:38:31,785 - __main__ - INFO - encoder.RNNCell.0.week_x_FC.bias	torch.Size([64])
+2024-08-01 14:38:31,787 - __main__ - INFO - encoder.RNNCell.0.week_time_FC.weight	torch.Size([64, 59])
+2024-08-01 14:38:31,789 - __main__ - INFO - encoder.RNNCell.0.week_time_FC.bias	torch.Size([64])
+2024-08-01 14:38:31,791 - __main__ - INFO - encoder.RNNCell.0.week_FC.weight	torch.Size([64, 128])
+2024-08-01 14:38:31,793 - __main__ - INFO - encoder.RNNCell.0.week_FC.bias	torch.Size([64])
+2024-08-01 14:38:31,795 - __main__ - INFO - encoder.RNNCell.0.day_x_FC.weight	torch.Size([64, 2])
+2024-08-01 14:38:31,797 - __main__ - INFO - encoder.RNNCell.0.day_x_FC.bias	torch.Size([64])
+2024-08-01 14:38:31,799 - __main__ - INFO - encoder.RNNCell.0.day_time_FC.weight	torch.Size([64, 59])
+2024-08-01 14:38:31,801 - __main__ - INFO - encoder.RNNCell.0.day_time_FC.bias	torch.Size([64])
+2024-08-01 14:38:31,803 - __main__ - INFO - encoder.RNNCell.0.day_FC.weight	torch.Size([64, 128])
+2024-08-01 14:38:31,805 - __main__ - INFO - encoder.RNNCell.0.day_FC.bias	torch.Size([64])
+2024-08-01 14:38:31,807 - __main__ - INFO - encoder.RNNCell.0.hour_x_FC.weight	torch.Size([64, 2])
+2024-08-01 14:38:31,809 - __main__ - INFO - encoder.RNNCell.0.hour_x_FC.bias	torch.Size([64])
+2024-08-01 14:38:31,811 - __main__ - INFO - encoder.RNNCell.0.hour_time_FC.weight	torch.Size([64, 59])
+2024-08-01 14:38:31,813 - __main__ - INFO - encoder.RNNCell.0.hour_time_FC.bias	torch.Size([64])
+2024-08-01 14:38:31,815 - __main__ - INFO - encoder.RNNCell.0.hour_FC.weight	torch.Size([64, 128])
+2024-08-01 14:38:31,817 - __main__ - INFO - encoder.RNNCell.0.hour_FC.bias	torch.Size([64])
+2024-08-01 14:38:31,819 - __main__ - INFO - encoder.RNNCell.0.fusion_x_time2.weight	torch.Size([64, 192])
+2024-08-01 14:38:31,821 - __main__ - INFO - encoder.RNNCell.0.fusion_x_time2.bias	torch.Size([64])
+2024-08-01 14:38:31,823 - __main__ - INFO - encoder.RNNCell.0.gate_FC2.weight	torch.Size([64, 64])
+2024-08-01 14:38:31,825 - __main__ - INFO - encoder.RNNCell.0.gate_FC2.bias	torch.Size([64])
+2024-08-01 14:38:31,827 - __main__ - INFO - encoder.RNNCell.0.info_FC2.weight	torch.Size([64, 64])
+2024-08-01 14:38:31,829 - __main__ - INFO - encoder.RNNCell.0.info_FC2.bias	torch.Size([64])
+2024-08-01 14:38:31,831 - __main__ - INFO - encoder.RNNCell.0.dynGraph.start_FC.weight	torch.Size([64, 128])
+2024-08-01 14:38:31,832 - __main__ - INFO - encoder.RNNCell.0.dynGraph.start_FC.bias	torch.Size([64])
+2024-08-01 14:38:31,834 - __main__ - INFO - encoder.RNNCell.0.dynGraph.fc.0.weight	torch.Size([4, 64])
+2024-08-01 14:38:31,836 - __main__ - INFO - encoder.RNNCell.0.dynGraph.fc.2.weight	torch.Size([64, 4])
+2024-08-01 14:38:31,838 - __main__ - INFO - encoder.RNNCell.0.GCN_update1.weight	torch.Size([4])
+2024-08-01 14:38:31,840 - __main__ - INFO - encoder.RNNCell.0.GCN_update1.mlp.mlp.weight	torch.Size([64, 384])
+2024-08-01 14:38:31,842 - __main__ - INFO - encoder.RNNCell.0.GCN_update1.mlp.mlp.bias	torch.Size([64])
+2024-08-01 14:38:31,844 - __main__ - INFO - encoder.RNNCell.0.GCN_update2.weight	torch.Size([4])
+2024-08-01 14:38:31,846 - __main__ - INFO - encoder.RNNCell.0.GCN_update2.mlp.mlp.weight	torch.Size([64, 384])
+2024-08-01 14:38:31,848 - __main__ - INFO - encoder.RNNCell.0.GCN_update2.mlp.mlp.bias	torch.Size([64])
+2024-08-01 14:38:31,850 - __main__ - INFO - encoder.RNNCell.0.GCN_reset1.weight	torch.Size([4])
+2024-08-01 14:38:31,852 - __main__ - INFO - encoder.RNNCell.0.GCN_reset1.mlp.mlp.weight	torch.Size([64, 384])
+2024-08-01 14:38:31,854 - __main__ - INFO - encoder.RNNCell.0.GCN_reset1.mlp.mlp.bias	torch.Size([64])
+2024-08-01 14:38:31,856 - __main__ - INFO - encoder.RNNCell.0.GCN_reset2.weight	torch.Size([4])
+2024-08-01 14:38:31,858 - __main__ - INFO - encoder.RNNCell.0.GCN_reset2.mlp.mlp.weight	torch.Size([64, 384])
+2024-08-01 14:38:31,860 - __main__ - INFO - encoder.RNNCell.0.GCN_reset2.mlp.mlp.bias	torch.Size([64])
+2024-08-01 14:38:31,862 - __main__ - INFO - encoder.RNNCell.0.GCN_cell1.weight	torch.Size([4])
+2024-08-01 14:38:31,864 - __main__ - INFO - encoder.RNNCell.0.GCN_cell1.mlp.mlp.weight	torch.Size([64, 384])
+2024-08-01 14:38:31,866 - __main__ - INFO - encoder.RNNCell.0.GCN_cell1.mlp.mlp.bias	torch.Size([64])
+2024-08-01 14:38:31,868 - __main__ - INFO - encoder.RNNCell.0.GCN_cell2.weight	torch.Size([4])
+2024-08-01 14:38:31,870 - __main__ - INFO - encoder.RNNCell.0.GCN_cell2.mlp.mlp.weight	torch.Size([64, 384])
+2024-08-01 14:38:31,873 - __main__ - INFO - encoder.RNNCell.0.GCN_cell2.mlp.mlp.bias	torch.Size([64])
+2024-08-01 14:38:31,875 - __main__ - INFO - encoder.RNNCell.0.layerNorm.weight	torch.Size([64])
+2024-08-01 14:38:31,877 - __main__ - INFO - encoder.RNNCell.0.layerNorm.bias	torch.Size([64])
+2024-08-01 14:38:31,879 - __main__ - INFO - decoder.RNNCell.0.input_FC.weight	torch.Size([64, 61])
+2024-08-01 14:38:31,881 - __main__ - INFO - decoder.RNNCell.0.input_FC.bias	torch.Size([64])
+2024-08-01 14:38:31,883 - __main__ - INFO - decoder.RNNCell.0.fusion_x_time.weight	torch.Size([64, 64])
+2024-08-01 14:38:31,885 - __main__ - INFO - decoder.RNNCell.0.fusion_x_time.bias	torch.Size([64])
+2024-08-01 14:38:31,887 - __main__ - INFO - decoder.RNNCell.0.gate_FC1.weight	torch.Size([64, 64])
+2024-08-01 14:38:31,889 - __main__ - INFO - decoder.RNNCell.0.gate_FC1.bias	torch.Size([64])
+2024-08-01 14:38:31,891 - __main__ - INFO - decoder.RNNCell.0.info_FC1.weight	torch.Size([64, 64])
+2024-08-01 14:38:31,893 - __main__ - INFO - decoder.RNNCell.0.info_FC1.bias	torch.Size([64])
+2024-08-01 14:38:31,895 - __main__ - INFO - decoder.RNNCell.0.dynGraph.start_FC.weight	torch.Size([64, 128])
+2024-08-01 14:38:31,897 - __main__ - INFO - decoder.RNNCell.0.dynGraph.start_FC.bias	torch.Size([64])
+2024-08-01 14:38:31,899 - __main__ - INFO - decoder.RNNCell.0.dynGraph.fc.0.weight	torch.Size([4, 64])
+2024-08-01 14:38:31,901 - __main__ - INFO - decoder.RNNCell.0.dynGraph.fc.2.weight	torch.Size([64, 4])
+2024-08-01 14:38:31,903 - __main__ - INFO - decoder.RNNCell.0.GCN_update1.weight	torch.Size([4])
+2024-08-01 14:38:31,905 - __main__ - INFO - decoder.RNNCell.0.GCN_update1.mlp.mlp.weight	torch.Size([64, 384])
+2024-08-01 14:38:31,907 - __main__ - INFO - decoder.RNNCell.0.GCN_update1.mlp.mlp.bias	torch.Size([64])
+2024-08-01 14:38:31,909 - __main__ - INFO - decoder.RNNCell.0.GCN_update2.weight	torch.Size([4])
+2024-08-01 14:38:31,911 - __main__ - INFO - decoder.RNNCell.0.GCN_update2.mlp.mlp.weight	torch.Size([64, 384])
+2024-08-01 14:38:31,913 - __main__ - INFO - decoder.RNNCell.0.GCN_update2.mlp.mlp.bias	torch.Size([64])
+2024-08-01 14:38:31,915 - __main__ - INFO - decoder.RNNCell.0.GCN_reset1.weight	torch.Size([4])
+2024-08-01 14:38:31,917 - __main__ - INFO - decoder.RNNCell.0.GCN_reset1.mlp.mlp.weight	torch.Size([64, 384])
+2024-08-01 14:38:31,919 - __main__ - INFO - decoder.RNNCell.0.GCN_reset1.mlp.mlp.bias	torch.Size([64])
+2024-08-01 14:38:31,921 - __main__ - INFO - decoder.RNNCell.0.GCN_reset2.weight	torch.Size([4])
+2024-08-01 14:38:31,923 - __main__ - INFO - decoder.RNNCell.0.GCN_reset2.mlp.mlp.weight	torch.Size([64, 384])
+2024-08-01 14:38:31,925 - __main__ - INFO - decoder.RNNCell.0.GCN_reset2.mlp.mlp.bias	torch.Size([64])
+2024-08-01 14:38:31,927 - __main__ - INFO - decoder.RNNCell.0.GCN_cell1.weight	torch.Size([4])
+2024-08-01 14:38:31,929 - __main__ - INFO - decoder.RNNCell.0.GCN_cell1.mlp.mlp.weight	torch.Size([64, 384])
+2024-08-01 14:38:31,930 - __main__ - INFO - decoder.RNNCell.0.GCN_cell1.mlp.mlp.bias	torch.Size([64])
+2024-08-01 14:38:31,932 - __main__ - INFO - decoder.RNNCell.0.GCN_cell2.weight	torch.Size([4])
+2024-08-01 14:38:31,934 - __main__ - INFO - decoder.RNNCell.0.GCN_cell2.mlp.mlp.weight	torch.Size([64, 384])
+2024-08-01 14:38:31,936 - __main__ - INFO - decoder.RNNCell.0.GCN_cell2.mlp.mlp.bias	torch.Size([64])
+2024-08-01 14:38:31,938 - __main__ - INFO - decoder.RNNCell.0.layerNorm.weight	torch.Size([64])
+2024-08-01 14:38:31,940 - __main__ - INFO - decoder.RNNCell.0.layerNorm.bias	torch.Size([64])
+2024-08-01 14:38:31,942 - __main__ - INFO - decoder.fc_final.weight	torch.Size([2, 64])
+2024-08-01 14:38:31,944 - __main__ - INFO - decoder.fc_final.bias	torch.Size([2])
+2024-08-01 14:38:31,946 - __main__ - INFO - transform.FC_q.weight	torch.Size([64, 59])
+2024-08-01 14:38:31,948 - __main__ - INFO - transform.FC_q.bias	torch.Size([64])
+2024-08-01 14:38:31,950 - __main__ - INFO - transform.FC_k.weight	torch.Size([64, 177])
+2024-08-01 14:38:31,952 - __main__ - INFO - transform.FC_k.bias	torch.Size([64])
+2024-08-01 14:38:31,954 - __main__ - INFO - transform.FC_v.weight	torch.Size([64, 64])
+2024-08-01 14:38:31,956 - __main__ - INFO - transform.FC_v.bias	torch.Size([64])
+2024-08-01 14:38:31,957 - __main__ - INFO - transform.FC.weight	torch.Size([64, 128])
+2024-08-01 14:38:31,960 - __main__ - INFO - transform.FC.bias	torch.Size([64])
+2024-08-01 14:38:31,961 - __main__ - INFO - Net's total params:415282
+2024-08-01 14:38:31,961 - __main__ - INFO - Optimizer's state_dict:
+2024-08-01 14:38:31,962 - __main__ - INFO - state	{}
+2024-08-01 14:38:31,962 - __main__ - INFO - param_groups	[{'lr': 0.001, 'betas': (0.9, 0.999), 'eps': 1e-08, 'weight_decay': 0.0001, 'amsgrad': False, 'maximize': False, 'foreach': None, 'capturable': False, 'differentiable': False, 'fused': None, 'initial_lr': 0.001, 'params': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89]}]
+2024-08-01 14:38:31,964 - __main__ - INFO - Number of model parameters is 415282
+2024-08-01 14:38:31,964 - __main__ - INFO - Start testing phase.....

@@ -183,10 +183,12 @@ class GraphGateRNN(nn.Module):
             batch_size, node_num, _, in_channels = input.shape
 
         x = self.input_process(x, x_time, self.fusion_mode)
-
-        Hidden_State = Hidden_State.view(batch_size, node_num, self.hidden_channels)
-
-        # 处理输入
+        print("Before view:", Hidden_State.shape, Hidden_State.size()) 
+        Hidden_State = Hidden_State.view(64, 64, 1)
+        print("After view:", Hidden_State.shape, Hidden_State.size())
+        
+        
+        
         if encoder_hidden is not None:
             Hidden_State = Hidden_State + encoder_hidden
 

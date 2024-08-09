@@ -186,7 +186,8 @@ def baseline_test(runid, model, dataloader, device, logger, cfg):
     best_mode_path = cfg['train']['best_mode']
     logger.info("loading {}".format(best_mode_path))
 
-    save_dict = torch.load(best_mode_path)
+    save_dict = torch.load(best_mode_path, weights_only=False, map_location=torch.device('cpu'))
+
     engine.model.load_state_dict(save_dict['model_state_dict'], strict=False)
     logger.info('model load success! {}'.format(best_mode_path))
 

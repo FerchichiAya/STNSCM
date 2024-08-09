@@ -26,6 +26,7 @@ import numpy as np
 from model.GraphGateRNN import GraphGateRNN
 
 
+
 class Decoder(nn.Module):
 
     def __init__(self, in_channels, time_channels, hidden_channels, output_channels, gcn_depth, alpha,

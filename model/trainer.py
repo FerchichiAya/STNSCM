@@ -136,11 +136,11 @@ def baseline_train(runid, model,
             """
             global_step += 1
 
-            x = x.to(device)
-            x_time = x_time.to(device)
-            target = target.to(device)
-            target_time = target_time.to(device)
-            target_cl = target_cl.to(device)
+            x = x.to("cpu")
+            x_time = x_time.to("cpu")
+            target = target.to("cpu")
+            target_time = target_time.to("cpu")
+            target_cl = target_cl.to("cpu")
 
             metrics = engine.train(input=x,
                                    input_time=x_time,

@@ -88,6 +88,7 @@ class Trainer():
 
         self.scaler = scaler
         self.model = model
+        device = torch.device("cpu")  # Explicitly define device as CPU
         self.model.to(device)
         self.device= device
         self.optimizer = optim.Adam(self.model.parameters(), lr=base_lr, weight_decay=weight_decay)
